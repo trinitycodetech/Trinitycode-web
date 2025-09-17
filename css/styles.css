@@ -1,0 +1,228 @@
+:root{
+  /* Paleta Trinity Code (verde-petróleo) */
+  --tc-bg:#1f2d30;          /* fondo general, casi negro */
+  --tc-card:#1b1c1cc4;      /* cartas/nav oscuro */
+  --tc-text:#e7f2ef;        /* texto principal */
+  --tc-muted:#a6b9b6;       /* texto secundario */
+  --tc-brand:#26827d;       /* verde petróleo principal */
+  --tc-brand2:#254743;      /* acento turquesa */
+  --tc-border:#517477;      /* bordes sutiles */
+  --tc-light:#cfe6e2;       /* color claro nuevo */
+  --wave-color:#2b5457;     /* color de ondas */
+  --wave-opacity:.16;       /* opacidad de ondas */
+}
+
+html,body{
+  background:var(--tc-bg);
+  color:var(--tc-text);
+}
+a{color:inherit; text-decoration:none}
+
+/* NAV/Hero */
+.navbar{
+  border-bottom:1px solid #46685f;
+  backdrop-filter:saturate(160%) blur(6px);
+}
+.hero{
+  background:
+    radial-gradient(1200px 600px at 8% -10%, color-mix(in oklab, var(--tc-brand) 35%, transparent), transparent 60%),
+    radial-gradient(1000px 520px at 110% 6%, color-mix(in oklab, var(--tc-brand2) 30%, transparent), transparent 60%);
+}
+.fw-semibold { color: var(--tc-light); }
+
+/* Identidad */
+.brand-gradient{
+  background:linear-gradient(135deg,var(--tc-brand),var(--tc-brand2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.brand-chip{
+  display:inline-block;
+  border-radius:.6rem;
+  padding:.25rem .5rem;
+  font-weight:800;
+  color:#2c423d;
+  background:linear-gradient(135deg,var(--tc-brand),var(--tc-brand2));
+}
+
+/* Componentes */
+.card{background:var(--tc-card); border:1px solid var(--tc-border)}
+.text-muted{color:var(--tc-muted)!important}
+
+.btn-brand{
+  background:linear-gradient(135deg,var(--tc-brand),var(--tc-brand2));
+  color:#fbffff; border:0;
+}
+.btn-brand:hover{filter:brightness(1.05)}
+.btn-outline-brand{
+  border:1px solid #2a3a3b;
+  color:var(--tc-text);
+  background:transparent;
+}
+.btn-outline-brand:hover{background:#1b5d62}
+
+.tag{
+  font-size:.85rem;
+  padding:.35rem .6rem;
+  border:1px solid #2a3a3b;
+  border-radius:999px;
+  color:#cfe6e2;
+  background:#2d565f;
+}
+footer{border-top:1px solid #2c463e}
+
+/* Badges de tiendas */
+.badge-store{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.6rem 1rem;
+  border:1px solid #2a3a3b;
+  border-radius:.8rem;
+  background:#2bc3da;
+}
+.badge-store img{height:20px}
+
+/* ===== Ondas topográficas en todo el fondo ===== */
+body.bg-waves{ position: relative; isolation: isolate; }
+body.bg-waves::before{
+  content:"";
+  position: fixed; inset: 0;
+  z-index: -1; pointer-events: none;
+  opacity: var(--wave-opacity);
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'>\
+  <g fill='none' stroke='%232b5457' stroke-width='1.2' opacity='0.9'>\
+    <path d='M-50 80 Q 120 40 260 80 T 580 80'/>\
+    <path d='M-50 130 Q 110 90 260 130 T 580 130'/>\
+    <path d='M-50 180 Q 140 140 260 180 T 580 180'/>\
+    <path d='M-50 230 Q 100 190 260 230 T 580 230'/>\
+    <path d='M-50 280 Q 150 240 260 280 T 580 280'/>\
+    <path d='M-50 330 Q 110 290 260 330 T 580 330'/>\
+    <path d='M-50 380 Q 140 340 260 380 T 580 380'/>\
+    <path d='M-50 430 Q 100 390 260 430 T 580 430'/>\
+    <path d='M-50 480 Q 150 440 260 480 T 580 480'/>\
+    <path d='M-50 530 Q 110 490 260 530 T 580 530'/>\
+  </g>\
+</svg>");
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  filter: saturate(110%);
+}
+
+/* ===== Wave divider ===== */
+.wave-divider{
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  background: transparent;
+}
+.wave-divider svg{ width: 100%; height: 100%; display: block; }
+.wave-divider path{
+  fill: color-mix(in oklab, var(--tc-brand) 18%, transparent);
+  filter: drop-shadow(0 -6px 18px rgba(0,0,0,.35));
+}
+
+/* ===== Tema AidApp (solo aidapp.html) ===== */
+body.aidapp-theme {
+  --tc-bg: #0a4a47;
+  --tc-card: #48c2c2cc;
+  --tc-text: #f2f7fa;
+  --tc-muted: #f6f9fb;
+  --tc-brand: #4dd0e1;
+  --tc-brand2: #57c2bb;
+  --tc-border: #3c4d59;
+  --tc-light: #d6f8ff;
+}
+
+/* ===== Carrusel / Service Slide ===== */
+.carousel-item{ position: relative; }
+
+/* controles e indicadores arriba de todo */
+.carousel-control-prev,
+.carousel-control-next{ z-index: 50; width: 3rem; }
+.carousel-indicators{ z-index: 50; }
+.carousel-indicators [data-bs-target]{
+  width:.65rem; height:.65rem; border-radius:999px; background-color:#7FBCC5;
+}
+
+.service-slide{
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.service-bg{
+  position: absolute; inset: 0;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.02);
+}
+
+.service-overlay{
+  position: absolute; inset: 0;
+  /* overlay más oscuro para legibilidad */
+  background:
+    linear-gradient(180deg, rgba(9,14,15,.25), rgba(9,14,15,.65)),
+    rgba(0,0,0,.25);
+  z-index: 5;
+  /* clave: no bloquear clics de flechas/indicadores */
+  pointer-events: none;
+}
+
+.service-content{
+  position: absolute; inset: 0;
+  display: grid; align-content: end;
+  padding: 1.25rem 1.25rem 1.5rem;
+  z-index: 10;
+}
+
+/* Badge arriba-izquierda */
+.service-badge-wrapper{
+  position:absolute;
+  top:15px; left:15px;
+  z-index:15;
+}
+
+.service-badge{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background: rgba(80,144,156,.2);
+  color:#AEE2E8; border:1px solid rgba(80,144,156,.4);
+  padding:.35rem .7rem; border-radius:999px; font-weight:600; font-size:.9rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Texto sobre imagen */
+.service-title{
+  color:#E7F2EF; margin:.6rem 0 .25rem; font-weight:800;
+  text-shadow:0 2px 8px rgba(0,0,0,.8);
+}
+.service-desc{
+  color:#A6B9B6; margin:0 0 .75rem;
+  text-shadow:0 2px 6px rgba(0,0,0,.7);
+}
+.service-btns a{ text-decoration:none; }
+
+/* ===== Acordeón de preguntas (faq-theme) ===== */
+body.faq-theme .accordion-button{ background-color:var(--tc-card); color:var(--tc-light); font-weight:600; }
+body.faq-theme .accordion-button.collapsed{ background-color:var(--tc-bg); color:var(--tc-text); }
+body.faq-theme .accordion-button:not(.collapsed){ background-color:var(--tc-brand); color:#fff; box-shadow: inset 0 -1px 0 rgba(0,0,0,.25); }
+body.faq-theme .accordion-button:focus{ box-shadow:0 0 0 .25rem rgba(47,191,184,.35); }
+
+/* ===== Responsive ===== */
+@media (max-width: 992px){
+  .service-slide{ height: 70vh; min-height: 440px; }
+  .service-content{ padding: 1rem 1rem 1.25rem; }
+  .service-title{ font-size: 1.75rem; line-height: 1.2; }
+}
+@media (max-width: 576px){
+  .service-slide{ height: 65vh; min-height: 400px; }
+  .service-badge-wrapper{ top:10px; left:10px; }
+  .service-badge{ font-size:.85rem; padding:.3rem .6rem; }
+  .service-title{ font-size: 1.45rem; }
+  .service-desc{ font-size:.95rem; }
+}
