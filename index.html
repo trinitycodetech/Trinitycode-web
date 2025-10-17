@@ -1,18 +1,14 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trinity Code — Creadores de AidApp</title>
-  <meta name="description" content="Trinity Code: desarrollo web, móvil y datos. Creadores de AidApp.">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contacto — Trinity Code</title>
   <link rel="icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-
-<body class="bg-waves">
-
+<body>
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark" style="background:rgba(10,14,15,.7)">
     <div class="container">
@@ -25,7 +21,7 @@
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="aidapp.html">AidApp</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
@@ -36,153 +32,64 @@
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="faq.html">Preguntas</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-sm btn-brand" href="aidapp.html#obtener"><i class="bi bi-download me-1"></i> Obtener AidApp</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO centrado con carrusel -->
+  <!-- HEADER -->
   <header class="hero py-5">
     <div class="container">
-      <div class="row justify-content-center g-4">
-        <div class="col-12 col-lg-10 col-xl-8 text-start">
-          <span class="badge text-bg-dark border border-secondary">Somos Trinity Code</span>
-          <h1 class="display-5 fw-bold mt-3">Tecnología accesible para instituciones y personas.</h1>
-          <p class="lead text-muted">Creamos <strong>AidApp</strong> y desarrollamos integraciones, analítica de datos y paneles web a medida.</p>
-
-          <div class="d-flex gap-2 flex-wrap">
-            <a class="btn btn-brand btn-lg" href="aidapp.html#obtener">Obtener AidApp</a>
-            <a class="btn btn-outline-brand btn-lg" href="aidapp.html">Conoce AidApp</a>
-          </div>
-
-          <!-- Carrusel -->
-          <div class="mt-4">
-            <div id="serviciosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5600">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="AidApp"></button>
-                <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="1" aria-label="Integraciones"></button>
-                <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="2" aria-label="Datos"></button>
-                <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="3" aria-label="Web"></button>
-              </div>
-
-              <div class="carousel-inner">
-
-                <!-- AidApp -->
-                <div class="carousel-item active">
-                  <div class="service-slide">
-                    <div class="service-bg" style="background-image:url('assets/Aidapp.png');"></div>
-                    <div class="service-overlay"></div>
-
-                    <!-- Badge -->
-                    <div class="service-badge-wrapper" style="position:absolute; top:15px; left:15px; z-index:10;">
-                      <span class="service-badge"><i class="bi bi-phone"></i> AidApp</span>
-                    </div>
-
-                    <div class="service-content">
-                      <h3 class="h3 service-title">Asistencia inclusiva en tiempo real</h3>
-                      <p class="service-desc">Perfiles accesibles, lectura en voz alta y tiempos de espera con alertas.</p>
-                      <div class="service-btns d-flex gap-2">
-                        <a class="btn btn-brand btn-sm" href="aidapp.html">Ver producto</a>
-                        <a class="btn btn-outline-brand btn-sm" href="aidapp.html#obtener">Obtener</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Integraciones -->
-                <div class="carousel-item">
-                  <div class="service-slide">
-                    <div class="service-bg" style="background-image:url('assets/Api.png');"></div>
-                    <div class="service-overlay"></div>
-
-                    <!-- Badge -->
-                    <div class="service-badge-wrapper" style="position:absolute; top:15px; left:15px; z-index:10;">
-                      <span class="service-badge"><i class="bi bi-puzzle"></i> Integraciones</span>
-                    </div>
-
-                    <div class="service-content">
-                      <h3 class="h3 service-title">APIs y flujos a tu medida</h3>
-                      <p class="service-desc">Conectamos sistemas clínicos, autenticación y notificaciones confiables.</p>
-                      <div class="service-btns d-flex gap-2">
-                        <a class="btn btn-brand btn-sm" href="servicios/integraciones.html">Ver integraciones</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Datos -->
-                <div class="carousel-item">
-                  <div class="service-slide">
-                    <div class="service-bg" style="background-image:url('assets/Powe\ bi.png');"></div>
-                    <div class="service-overlay"></div>
-
-                    <!-- Badge -->
-                    <div class="service-badge-wrapper" style="position:absolute; top:15px; left:15px; z-index:10;">
-                      <span class="service-badge"><i class="bi bi-bar-chart-line"></i> Datos</span>
-                    </div>
-
-                    <div class="service-content">
-                      <h3 class="h3 service-title">Power BI & SQL con foco en decisión</h3>
-                      <p class="service-desc">KPIs, dashboards y gobierno de datos para gestión clínica y atención.</p>
-                      <div class="service-btns d-flex gap-2">
-                        <a class="btn btn-brand btn-sm" href="servicios/datos.html">Ver analítica</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Web -->
-                <div class="carousel-item">
-                  <div class="service-slide">
-                    <div class="service-bg" style="background-image:url('assets/web.png');"></div>
-                    <div class="service-overlay"></div>
-
-                    <!-- Badge -->
-                    <div class="service-badge-wrapper" style="position:absolute; top:15px; left:15px; z-index:10;">
-                      <span class="service-badge"><i class="bi bi-globe2"></i> Web</span>
-                    </div>
-
-                    <div class="service-content">
-                      <h3 class="h3 service-title">Sitios y paneles de alto rendimiento</h3>
-                      <p class="service-desc">UI/UX oscuro, accesible y responsive con performance de producción.</p>
-                      <div class="service-btns d-flex gap-2">
-                        <a class="btn btn-brand btn-sm" href="servicios/web.html">Ver web & paneles</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Controles del carrusel -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#serviciosCarousel" data-bs-slide="prev" aria-label="Anterior">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#serviciosCarousel" data-bs-slide="next" aria-label="Siguiente">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-          <!-- /Carrusel -->
-        </div>
-      </div>
+      <h1 class="display-6 fw-bold">Contacto</h1>
+      <p class="text-muted">Cuéntanos qué necesitas y coordinamos una demo.</p>
     </div>
   </header>
 
-  <!-- CTA -->
+  <!-- CONTACTO -->
   <section class="py-5">
     <div class="container">
-      <div class="card p-4 text-center">
-        <h2 class="h4 mb-2" style="color: #50909c;">¿Institución interesada?</h2>
-        <p class="text-muted mb-3">Pilotos y suscripciones institucionales. Panel con métricas y trazabilidad.</p>
-        <div class="d-flex gap-2 justify-content-center flex-wrap">
-          <a class="btn btn-brand" href="contacto.html">Solicitar demo</a>
-          <a class="btn btn-outline-brand" href="faq.html">Preguntas frecuentes</a>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card p-4 h-100">
+            <div class="d-grid gap-2">
+              <a class="btn btn-brand" href="mailto:trinitycode.tech@gmail.com?subject=Contacto%20TrinityCode">📧 contacto@trinitycode.cl</a>
+              <a class="btn btn-brand" target="_blank" rel="noopener" href="https://wa.me/56900000000?text=Hola%20TrinityCode%2C%20quiero%20saber%20sobre%20AidApp">💬 WhatsApp</a>
+              <a class="btn btn-outline-brand" href="aidapp.html#obtener">⬇️ Obtener AidApp</a>
+            </div>
+          </div>
         </div>
+
+        <div class="col-lg-7">
+          <form id="contactForm" class="card p-4 h-100" novalidate>
+            <h2 class="h5 mb-3">Escríbenos</h2>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input required type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                  <label for="nombre">Nombre</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input required type="email" class="form-control" id="email" placeholder="tucorreo@dominio.com">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea required class="form-control" id="mensaje" placeholder="Cuéntanos de tu caso" style="height:140px"></textarea>
+                  <label for="mensaje">Mensaje</label>
+                </div>
+              </div>
+              <div class="col-12 d-flex align-items-center gap-3">
+                <button id="submitBtn" class="btn btn-brand btn-lg" type="submit">Enviar</button>
+                <small class="text-muted">Al enviar aceptas contacto por email/WhatsApp.</small>
+              </div>
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
@@ -190,14 +97,74 @@
   <!-- FOOTER -->
   <footer class="py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-      <div>© <span id="year"></span> Trinity Code Spa — Santiago, Chile</div>
-      <div class="text-muted">
-        <a href="assets/politica-privacidad.pdf" target="_blank" rel="noopener">Política de Privacidad</a>
-      </div>
+      <div>© <span id="year"></span> TrinityCode — Santiago, Chile</div>
+      <div class="text-muted"><a href="assets/politica-privacidad.pdf" target="_blank" rel="noopener">Política de Privacidad</a></div>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Firebase + Firestore (CDN, módulo) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+    // Si App Check está en Enforced, avísame y te agrego el bloque con reCAPTCHA v3.
+
+    // 🔧 Config de tu app (desde Firebase > Configuración del proyecto > General > Tu app web)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDF_yi7cP9U20BE7unAwexlFCtE8qST4Y",
+      authDomain: "trinitycode.firebaseapp.com",
+      projectId: "trinitycode",
+      storageBucket: "trinitycode.appspot.com",
+      messagingSenderId: "925562844874",
+      appId: "1:925562844874:web:7e84bacce709acd44f6e33",
+      measurementId: "G-7LYEERGSK4"
+    };
+
+    // Inicializar
+    const app = initializeApp(firebaseConfig);
+    try { if (await isSupported()) getAnalytics(app); } catch {}
+    console.log("🔥 Firebase Project:", app.options.projectId);
+
+    const db  = getFirestore(app);
+    const form = document.getElementById('contactForm');
+    const btn  = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nombre  = document.getElementById('nombre').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if(!nombre || !email || !mensaje){
+        alert('Completa todos los campos'); 
+        return;
+      }
+
+      // Evita doble envío
+      if (btn.disabled) return;
+      const old = btn.innerHTML; btn.disabled = true; btn.innerHTML = 'Enviando...';
+
+      try{
+        await addDoc(collection(db, 'contactMessages'), {
+          nombre, email, mensaje,
+          createdAt: serverTimestamp(),
+          userAgent: navigator.userAgent || ''
+        });
+        form.reset();
+        alert('✅ Mensaje enviado. ¡Gracias!');
+      }catch(err){
+        console.error('[Firestore] Error al enviar:', err);
+        alert(`❌ No se pudo enviar.\nCódigo: ${err.code || 'sin-código'}\nDetalle: ${err.message || err}`);
+      }finally{
+        btn.disabled = false; btn.innerHTML = old;
+      }
+    });
+  </script>
+
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

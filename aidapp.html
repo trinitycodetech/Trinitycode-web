@@ -1,18 +1,67 @@
-<!doctype html><html lang="es"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AidApp — Trinity Code</title>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AidApp — Un desarrollo de Trinity Code</title>
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/styles.css">
-</head><body class="aidapp-theme">
+<style>
+  :root{ --brand:#00cfc1; --brand-d:#00b3a7; --ink:#0b0f14; --deep:#0f2b2a; }
+  .topbar{
+    background: linear-gradient(90deg, rgba(0,207,193,.14), rgba(15,43,42,.14));
+    color:#0b0f14; padding:8px 0; font-weight:600; backdrop-filter:saturate(140%) blur(4px);
+  }
+  .pill{ background:#fff; border:1px solid rgba(0,207,193,.35); padding:4px 10px; border-radius:999px; font-size:.85rem; }
+  .hero{
+    position:relative; overflow:hidden; color:#fff;
+    background: radial-gradient(1000px 600px at 10% -10%, rgba(0,207,193,.35), transparent 60%),
+                radial-gradient(900px 700px at 110% 10%, rgba(0,207,193,.2), transparent 60%),
+                linear-gradient(180deg, #0b0f14 0%, #0f2b2a 70%);
+  }
+  .glow{ position:absolute; inset:-20% -10% auto -10%; background: radial-gradient(600px 300px at 60% -20%, rgba(0,207,193,.35), transparent 60%); filter: blur(40px); opacity:.8; pointer-events:none; }
+  .badge-beta{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:.35rem .7rem; font-size:.85rem; display:inline-flex; align-items:center; gap:.4rem; }
+  .badge-beta i{ color:var(--brand) }
+  .btn-brand{
+    background:var(--brand); color:#001414!important; border:none; font-weight:700;
+    padding:.9rem 1.2rem; border-radius:12px; box-shadow:0 10px 24px rgba(0,207,193,.25);
+    transition: transform .15s ease, box-shadow .15s ease, background .2s;
+  }
+  .btn-brand:hover{ background:var(--brand-d); transform: translateY(-1px); box-shadow:0 14px 28px rgba(0,207,193,.35); }
+  .card-elev{ background:#5d7f89; border:1px solid #66b6c4; border-radius:16px; box-shadow:0 8px 30px rgba(11,15,20,.06); }
+  .list-check li{ padding-left:1.6rem; position:relative; margin:.5rem 0; }
+  .list-check li:before{ content:"\f26e"; font-family:"bootstrap-icons"; position:absolute; left:0; top:.05rem; color:var(--brand); }
+  /* Quita los fondos blancos de Bootstrap solo en esta página */
+.aidapp-theme .bg-light{ background: transparent !important; }
 
+</style>
+</head>
+
+<body class="aidapp-theme">
+
+<!-- CINTA SUPERIOR (honesta) -->
+<div class="topbar">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
+    <div class="small">
+      <span class="pill"><i class="bi bi-stars me-1"></i> Versión 1.0 (Beta)</span>
+      <span class="ms-2">Presentación de AidApp por Trinity Code</span>
+    </div>
+    <a class="small text-decoration-none" href="mailto:contacto@trinitycode.cl">contacto@trinitycode.cl</a>
+  </div>
+</div>
+
+<!-- NAV -->
 <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark" style="background:rgba(10,14,15,.7)">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-      <img src="assets/icono.png" alt="Trinity Code" height="32" class="me-2"><span>Trinity <span class="brand-gradient">Code</span></span>
+      <img src="assets/icono.png" alt="Trinity Code" height="32" class="me-1">
+      <span>Trinity <span class="brand-gradient">Code</span></span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
@@ -27,133 +76,68 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="faq.html">Preguntas</a></li>
         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-        <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-brand" href="#obtener"><i class="bi bi-download me-1"></i> Obtener AidApp</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- HERO -->
 <header class="hero py-5">
-  <div class="container">
-    <h1 class="display-5 fw-bold">AidApp</h1> 
-    <h4>(En Desarollo)</h4>
-    <p class="lead text-muted">Plataforma inclusiva que conecta a personas con discapacidad con asistencia en tiempo real.</p>
+  <div class="glow"></div>
+  <div class="container text-center">
+    <span class="badge-beta mb-3"><i class="bi bi-stars"></i> Versión 1.0 (Beta)</span>
+    <h1 class="display-5 fw-bold mb-2">AidApp — nuestra plataforma de inclusión</h1>
+    <p class="lead text-white-50 mb-4">
+      AidApp es una aplicación creada por <strong>Trinity Code</strong> para facilitar la solicitud y gestión de asistencia en tiempo real.
+    </p>
+    <a href="https://aidapp-web.web.app/" target="_blank" rel="noopener" class="btn btn-brand btn-lg">
+      <i class="bi bi-box-arrow-up-right me-1"></i> Conoce AidApp
+    </a>
   </div>
 </header>
 
+<!-- QUÉ ES -->
 <section class="py-5">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <div class="card p-4 h-100">
-          <h2 class="h4">Cómo funciona</h2>
-          <ul class="text-muted mb-0">
-            <li>La persona solicita ayuda desde app/web con <strong>botón SOS</strong> o formulario accesible.</li>
-            <li>La institución recibe y <strong>prioriza en un panel</strong> (cola, estados, derivaciones).</li>
-            <li>Se coordina asistencia (silla de ruedas, guía, intérprete, ventanilla preferente) y se registra el resultado.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card p-4 h-100">
-          <h2 class="h4">Beneficios</h2>
-          <ul class="text-muted mb-0">
-            <li>Reduce barreras de acceso y tiempos de espera.</li>
-            <li>Métricas y trazabilidad para gestión y mejora continua.</li>
-            <li>Cumplimiento de protocolos de inclusión y experiencia de atención digna.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="obtener" class="py-5">
-  <div class="container">
-    <h2 class="h3 mb-3">Cómo obtener AidApp</h2>
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <div class="card p-4 h-100">
-          <h3 class="h5">Personas usuarias</h3>
-          <p class="text-muted">Descarga gratuita.</p>
-          <div class="d-flex gap-2 flex-wrap">
-            <a class="btn btn-brand" href="#" target="_blank" rel="noopener"><img src="assets/google-play.svg" alt=""> <span>Google Play</span></a>
-            <a class="btn btn-brand" href="#" target="_blank" rel="noopener"><img src="assets/app-store.svg" alt=""> <span>App Store</span></a>
-            <a class="btn btn-brand" href="#" target="_blank" rel="noopener"><i class="bi bi-globe"></i> <span>Versión Web</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card p-4 h-100">
-          <h3 class="h5">Instituciones / Empresas</h3>
-          <p class="text-muted">Pilotos y suscripciones por sede.</p>
-          <ul class="text-muted"><li>Panel de gestión y reportes</li><li>Capacitación y soporte</li></ul>
-          <div class="d-flex gap-2 flex-wrap">
-            <a class="btn btn-brand" href="mailto:hola@trinitycode.cl?subject=Piloto%20AidApp">Solicitar piloto</a>
-            <a class="btn btn-brand" href="#" target="_blank" rel="noopener">Ingresar al panel</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECCIONES AIDAPP CON CONTENIDO DEFINIDO / EN DESARROLLO ===== -->
-
-<section id="que-es" class="py-5">
-  <div class="container">
-    <div class="card p-4">
-      <h2 class="h4 mb-3">¿Qué es AidApp?</h2>
+    <div class="card-elev p-4">
+      <h2 class="h4 fw-bold mb-3">¿Qué es AidApp?</h2>
       <p class="text-muted mb-0">
-        AidApp es una solución integral de accesibilidad que permite a personas con discapacidad solicitar asistencia personalizada en espacios como clínicas, bancos, universidades, municipios y oficinas de servicios públicos. 
-        La institución gestiona las solicitudes en un <strong>panel en tiempo real</strong>, asigna responsables y mide indicadores de atención e inclusión.
+        Desde la visión de Trinity Code, AidApp busca simplificar la experiencia de atención: una persona solicita ayuda
+        y la institución puede visualizar, priorizar y dar respuesta en un panel centralizado.
       </p>
     </div>
   </div>
 </section>
 
-<section id="perfiles" class="py-5">
+<!-- CÓMO FUNCIONA (sin claims) -->
+<section class="py-5">
   <div class="container">
-    <h2 class="h4 mb-3">Perfiles de accesibilidad</h2>
+    <h2 class="h4 fw-bold mb-3">Cómo funciona</h2>
     <div class="row g-4">
-      <div class="col-lg-3 col-md-6">
-        <div class="card p-3 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-universal-access"></i> Motora</h3>
-          <ul class="text-muted mb-0 small">
-            <li>Solicitud de <strong>silla de ruedas</strong> y/o asistente para traslado.</li>
-            <li>Ingreso por <strong>accesos preferentes</strong>.</li>
-            <li><strong>Botón SOS</strong> grande persistente.</li>
+      <div class="col-lg-4">
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-person-hearts text-success"></i> Solicitud</h3>
+          <ul class="list-check text-muted mb-0">
+            <li>Botón SOS o formulario accesible.</li>
+            <li>Perfil, tipo de ayuda y ubicación (cuando aplica).</li>
           </ul>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="card p-3 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-ear"></i> Auditiva</h3>
-          <ul class="text-muted mb-0 small">
-            <li>Chat en vivo y opción de <strong>intérprete LSCh</strong> (presencial/remoto).</li>
-            <li>Alertas <strong>visuales y hápticas</strong>.</li>
-            <li>Videos informativos con <strong>subtítulos</strong>.</li>
-          </ul>
-          <div class="small text-muted mt-2">* Integración con intérprete remoto: <em>en desarrollo</em>.</div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="card p-3 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-eye-slash"></i> Visual</h3>
-          <ul class="text-muted mb-0 small">
-            <li><strong>Lector de pantalla</strong> y alto contraste.</li>
-            <li>Navegación por <strong>voz</strong> y fuente ajustable.</li>
-            <li>Guía interior asistida (beacons/Wi-Fi): <em>en desarrollo</em>.</li>
+      <div class="col-lg-4">
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-speedometer2 text-success"></i> Gestión</h3>
+          <ul class="list-check text-muted mb-0">
+            <li>Panel para ver solicitudes.</li>
+            <li>Asignación y seguimiento del estado.</li>
           </ul>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="card p-3 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-brain"></i> Cognitiva / Neurodiversidad</h3>
-          <ul class="text-muted mb-0 small">
-            <li>Interfaz <strong>simplificada</strong> con pictogramas.</li>
-            <li>Lenguaje claro y <strong>modo anti-ruido</strong>.</li>
-            <li>Recordatorios y <strong>pasos guiados</strong>.</li>
+      <div class="col-lg-4">
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-bar-chart text-success"></i> Registro</h3>
+          <ul class="list-check text-muted mb-0">
+            <li>Historial por solicitud.</li>
+            <li>Información para análisis interno.</li>
           </ul>
         </div>
       </div>
@@ -161,165 +145,56 @@
   </div>
 </section>
 
-<section id="funcionalidades" class="py-5">
+<!-- MÓDULOS (descripción neutra) -->
+<section class="py-5 bg-light">
   <div class="container">
-    <h2 class="h4 mb-3">Funcionalidades clave</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-geo-alt"></i> Asistencia contextual</h3>
-          <p class="text-muted mb-0">Solicitud con <strong>ubicación</strong>, perfil y tipo de ayuda para derivación rápida.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-bell"></i> Alertas multimodales</h3>
-          <p class="text-muted mb-0">Notificaciones visuales, sonoras y hápticas con mensajes adaptados (🟢/🟡/🔴).</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-people"></i> Gestión con SLA</h3>
-          <p class="text-muted mb-0">Asignación de responsables, <strong>tiempos objetivo</strong> y escalamiento por prioridad.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-shield-check"></i> Auditoría</h3>
-          <p class="text-muted mb-0">Historial completo por ticket, sello de tiempo y encuesta post-atención.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="flujo" class="py-5">
-  <div class="container">
-    <h2 class="h4 mb-3">Flujo de atención</h2>
-    <ol class="text-muted mb-0">
-      <li><strong>Solicitud:</strong> SOS o formulario accesible.</li>
-      <li><strong>Recepción:</strong> creación de ticket y prioridad por reglas.</li>
-      <li><strong>Asignación:</strong> responsable acepta; persona recibe aviso.</li>
-      <li><strong>Asistencia:</strong> traslado, intérprete, ventanilla, etc.</li>
-      <li><strong>Cierre:</strong> tiempos, resultado y satisfacción.</li>
-    </ol>
-  </div>
-</section>
-
-<section id="modulos" class="py-5">
-  <div class="container">
-    <h2 class="h4 mb-3">Módulos del sistema</h2>
+    <h2 class="h4 fw-bold mb-3">Módulos</h2>
     <div class="row g-4">
       <div class="col-lg-4">
-        <div class="card p-4 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-grid"></i> Panel Operativo</h3>
-          <p class="text-muted mb-0">Cola por sede, estados, notas internas, <strong>mapa</strong> y reasignación.</p>
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-grid"></i> Panel</h3>
+          <p class="text-muted mb-0">Visualización de solicitudes, estados y anotaciones internas.</p>
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="card p-4 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-bar-chart"></i> Reportes & KPIs</h3>
-          <p class="text-muted mb-0"><strong>Tiempo de respuesta</strong>, satisfacción, demanda por franja y tipo de ayuda.</p>
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-bar-chart"></i> Reportes</h3>
+          <p class="text-muted mb-0">Información para revisar la operación y tomar decisiones.</p>
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="card p-4 h-100">
+        <div class="card-elev p-4 h-100">
           <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-gear"></i> Configuración</h3>
-          <p class="text-muted mb-0">Perfiles, prioridades, tipos de ayuda, usuarios y permisos (RBAC).</p>
+          <p class="text-muted mb-0">Perfiles, tipos de ayuda, usuarios y permisos.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="integraciones" class="py-5">
+<!-- CTA HONESTO -->
+<section class="py-5">
   <div class="container">
-    <h2 class="h4 mb-3">Integraciones</h2>
-    <ul class="text-muted mb-2">
-      <li><strong>APIs</strong> para sincronizar usuarios, agendas y sedes.</li>
-      <li><strong>Webhooks</strong> para nueva solicitud, cambio de estado y cierre.</li>
-      <li><strong>Exportación</strong> (CSV/JSON) y conectores para BI (Power BI / SQL).</li>
-    </ul>
-    <div class="small text-muted">SSO para panel de empresas: <em>en desarrollo</em>.</div>
-  </div>
-</section>
-
-<section id="seguridad" class="py-5">
-  <div class="container">
-    <h2 class="h4 mb-3">Seguridad y cumplimiento</h2>
-    <div class="card p-4">
-      <ul class="text-muted mb-0">
-        <li>Cifrado en tránsito (HTTPS) y en reposo según proveedor cloud.</li>
-        <li>Control de acceso por roles (RBAC) y registro de auditoría.</li>
-        <li>Privacidad por diseño y <strong>minimización de datos</strong>.</li>
-        <li>Backups y ambientes separados (desarrollo / piloto / producción).</li>
-      </ul>
+    <div class="card-elev p-4 p-lg-5 text-center">
+      <h3 class="h5 fw-bold">Conoce más sobre AidApp</h3>
+      <p class="text-muted mb-3">Explora la versión 1.0 (Beta) y revisa cómo presentamos la experiencia.</p>
+      <a href="https://aidapp-web.web.app/" target="_blank" rel="noopener" class="btn btn-brand">
+        Visitar sitio oficial de AidApp
+      </a>
     </div>
   </div>
 </section>
-
-<section id="metricas" class="py-5">
-  <div class="container">
-    <h2 class="h4 mb-3">Métricas y KPIs</h2>
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="border rounded p-3 h-100 text-center">
-          <div class="fw-bold">Tiempo de respuesta</div>
-          <div class="text-muted small">Promedio y percentiles (p50, p90).</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="border rounded p-3 h-100 text-center">
-          <div class="fw-bold">Tasa de resolución</div>
-          <div class="text-muted small">% tickets completados vs. derivados.</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="border rounded p-3 h-100 text-center">
-          <div class="fw-bold">Satisfacción</div>
-          <div class="text-muted small">Encuesta breve post-atención.</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="border rounded p-3 h-100 text-center">
-          <div class="fw-bold">Demanda</div>
-          <div class="text-muted small">Picos por sede, franja y tipo de ayuda.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="casos" class="py-5">
-  <div class="container">
-    <h2 class="h4 mb-3">Casos de uso</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h3 class="h6 mb-2"><i class="bi bi-hospital me-1"></i> Clínicas y hospitales</h3>
-          <p class="text-muted mb-0">Ingreso asistido, coordinación de movilidad, intérprete y priorización hacia box o ventanilla.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h3 class="h6 mb-2"><i class="bi bi-bank me-1"></i> Bancos y servicios públicos</h3>
-          <p class="text-muted mb-0">Ventanilla preferente, apoyo a trámites, señalización accesible y reducción de esperas.</p>
-        </div>
-      </div>
-    </div>
-    <div class="small text-muted mt-3">Pilotos con instituciones: <em>en preparación</em>.</div>
-  </div>
-</section>
-
-<!-- ===== FIN SECCIONES ===== -->
 
 <footer class="py-4">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
     <div>© <span id="year"></span> Trinity Code Spa — Santiago, Chile</div>
-    <div class="text-muted"><a href="assets/politica-privacidad.pdf" target="_blank" rel="noopener">Política de Privacidad</a></div>
+    <div class="text-muted">
+      <a href="assets/politica-privacidad.pdf" target="_blank" rel="noopener">Política de Privacidaddd</a>
+    </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body></html>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
