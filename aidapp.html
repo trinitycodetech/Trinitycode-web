@@ -14,15 +14,15 @@
     background: linear-gradient(90deg, rgba(0,207,193,.14), rgba(15,43,42,.14));
     color:#0b0f14; padding:8px 0; font-weight:600; backdrop-filter:saturate(140%) blur(4px);
   }
-  .pill{ background:#fff; border:1px solid rgba(0,207,193,.35); padding:4px 10px; border-radius:999px; font-size:.85rem; }
+  .pill{ background:#ffffff; border:1px solid rgba(0,207,193,.35); padding:4px 10px; border-radius:999px; font-size:.85rem; }
   .hero{
-    position:relative; overflow:hidden; color:#fff;
+    position:relative; overflow:hidden; color:#82b0b5;
     background: radial-gradient(1000px 600px at 10% -10%, rgba(0,207,193,.35), transparent 60%),
                 radial-gradient(900px 700px at 110% 10%, rgba(0,207,193,.2), transparent 60%),
                 linear-gradient(180deg, #0b0f14 0%, #0f2b2a 70%);
   }
   .glow{ position:absolute; inset:-20% -10% auto -10%; background: radial-gradient(600px 300px at 60% -20%, rgba(0,207,193,.35), transparent 60%); filter: blur(40px); opacity:.8; pointer-events:none; }
-  .badge-beta{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:.35rem .7rem; font-size:.85rem; display:inline-flex; align-items:center; gap:.4rem; }
+  .badge-beta{ background:rgba(255,255,255,.12); color:#5b6c70; border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:.35rem .7rem; font-size:.85rem; display:inline-flex; align-items:center; gap:.4rem; }
   .badge-beta i{ color:var(--brand) }
   .btn-brand{
     background:var(--brand); color:#001414!important; border:none; font-weight:700;
@@ -30,18 +30,17 @@
     transition: transform .15s ease, box-shadow .15s ease, background .2s;
   }
   .btn-brand:hover{ background:var(--brand-d); transform: translateY(-1px); box-shadow:0 14px 28px rgba(0,207,193,.35); }
-  .card-elev{ background:#5d7f89; border:1px solid #66b6c4; border-radius:16px; box-shadow:0 8px 30px rgba(11,15,20,.06); }
+  .card-elev{ background:#538686; border:1px solid #d8f1ee; border-radius:16px; box-shadow:0 8px 30px rgba(11,15,20,.06); }
   .list-check li{ padding-left:1.6rem; position:relative; margin:.5rem 0; }
   .list-check li:before{ content:"\f26e"; font-family:"bootstrap-icons"; position:absolute; left:0; top:.05rem; color:var(--brand); }
   /* Quita los fondos blancos de Bootstrap solo en esta página */
-.aidapp-theme .bg-light{ background: transparent !important; }
-
+  .aidapp-theme .bg-light{ background: transparent !important; }
 </style>
 </head>
 
 <body class="aidapp-theme">
 
-<!-- CINTA SUPERIOR (honesta) -->
+<!-- CINTA SUPERIOR -->
 <div class="topbar">
   <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
     <div class="small">
@@ -86,9 +85,10 @@
   <div class="glow"></div>
   <div class="container text-center">
     <span class="badge-beta mb-3"><i class="bi bi-stars"></i> Versión 1.0 (Beta)</span>
-    <h1 class="display-5 fw-bold mb-2">AidApp — nuestra plataforma de inclusión</h1>
+    <h1 class="display-5 fw-bold mb-2">AidApp — orientación en sucursal y asistencia en tiempo real</h1>
     <p class="lead text-white-50 mb-4">
-      AidApp es una aplicación creada por <strong>Trinity Code</strong> para facilitar la solicitud y gestión de asistencia en tiempo real.
+      La app guía a las personas dentro de la sucursal con un <strong>mapa interno</strong>, y el panel para empresas muestra cada
+      solicitud con <strong>tipo de ayuda</strong>, <strong>contacto</strong>, <strong>tiempo estimado de llegada</strong> y <strong>ubicación en tiempo real</strong>.
     </p>
     <a href="https://aidapp-web.web.app/" target="_blank" rel="noopener" class="btn btn-brand btn-lg">
       <i class="bi bi-box-arrow-up-right me-1"></i> Conoce AidApp
@@ -99,45 +99,81 @@
 <!-- QUÉ ES -->
 <section class="py-5">
   <div class="container">
-    <div class="card-elev p-4">
+    <div class="card-elev p-4 p-lg-5">
       <h2 class="h4 fw-bold mb-3">¿Qué es AidApp?</h2>
-      <p class="text-muted mb-0">
-        Desde la visión de Trinity Code, AidApp busca simplificar la experiencia de atención: una persona solicita ayuda
-        y la institución puede visualizar, priorizar y dar respuesta en un panel centralizado.
+      <p class="mb-4 text-muted">
+        AidApp conecta a personas que necesitan apoyo, otorgandole independencia y autonomia. La <strong>app para personas</strong> muestra el
+        <strong>mapa interno</strong> del lugar y orienta paso a paso hacia su destino. La <strong>web para empresas</strong> permite ver y gestionar en
+        vivo las solicitudes con toda la información necesaria para brindar la asistencia correcta y a tiempo.
       </p>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-3 h-100 border rounded-3">
+            <h3 class="h6 mb-2"><i class="bi bi-person-walking me-1 text-success"></i> Para personas</h3>
+            <ul class="list-check mb-0 text-muted">
+              <li>Mapa interno de la sucursal y <strong>guía paso a paso</strong> hacia el lugar indicado.</li>
+              <li>Solicitud de ayuda según necesidad (movilidad, orientación, acompañamiento, etc.).</li>
+              <li>Opción de compartir ubicación en tiempo real cuando corresponde.</li>
+              <li>Diseño pensado para <strong>distintos tipos de discapacidad</strong>.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 h-100 border rounded-3">
+            <h3 class="h6 mb-2"><i class="bi bi-building me-1 text-success"></i> Para empresas</h3>
+            <ul class="list-check mb-0 text-muted">
+              <li>Panel por sucursal: <strong>nueva solicitud</strong>, <strong>tipo de ayuda</strong>, <strong>contacto</strong> y notas.</li>
+              <li><strong>Ubicación en tiempo real</strong> y <strong>tiempo estimado de llegada</strong> para coordinar el apoyo.</li>
+              <li>Asignación de responsables y estados (recibida, en camino, atendiendo, finalizada).</li>
+              <li>Historial para seguimiento y mejora del servicio.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accesibilidad breve -->
+      <div class="alert alert-info mt-4 mb-0" role="alert">
+        <i class="bi bi-universal-access-circle me-2"></i>
+        <strong>Accesibilidad:</strong> interfaz clara, textos legibles y señales visuales/sonoras para apoyar a personas con
+        distintas necesidades (visual, auditiva, motora o cognitiva).
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CÓMO FUNCIONA (sin claims) -->
+<!-- CÓMO FUNCIONA -->
 <section class="py-5">
   <div class="container">
     <h2 class="h4 fw-bold mb-3">Cómo funciona</h2>
     <div class="row g-4">
       <div class="col-lg-4">
         <div class="card-elev p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-person-hearts text-success"></i> Solicitud</h3>
+          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-map text-success"></i> 1) Orientación & Solicitud</h3>
           <ul class="list-check text-muted mb-0">
-            <li>Botón SOS o formulario accesible.</li>
-            <li>Perfil, tipo de ayuda y ubicación (cuando aplica).</li>
+            <li>La persona abre la app y usa el <strong>mapa interno</strong> para saber dónde dirigirse.</li>
+            <li>Si necesita apoyo, crea la <strong>solicitud</strong> indicando el tipo de ayuda y contacto.</li>
+            <li>Puede compartir su <strong>ubicación en tiempo real</strong> dentro de la sucursal.</li>
           </ul>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card-elev p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-speedometer2 text-success"></i> Gestión</h3>
+          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-speedometer2 text-success"></i> 2) Gestión en el panel</h3>
           <ul class="list-check text-muted mb-0">
-            <li>Panel para ver solicitudes.</li>
-            <li>Asignación y seguimiento del estado.</li>
+            <li>El panel muestra: <strong>tipo de ayuda, contacto, ubicación</strong> y <strong>ETA</strong>.</li>
+            <li>Se asigna un responsable y se gestionan <strong>estados</strong> en tiempo real.</li>
+            <li>Notificaciones y alertas para nuevas solicitudes o cambios.</li>
           </ul>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card-elev p-4 h-100">
-          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-bar-chart text-success"></i> Registro</h3>
+          <h3 class="h6 mb-2 d-flex align-items-center gap-2"><i class="bi bi-clipboard2-check text-success"></i> 3) Acompañamiento & Cierre</h3>
           <ul class="list-check text-muted mb-0">
-            <li>Historial por solicitud.</li>
-            <li>Información para análisis interno.</li>
+            <li>Equipo se dirige al punto indicado y brinda la asistencia.</li>
+            <li>Se registra <strong>tiempo de llegada</strong> y <strong>cierre</strong> de la solicitud.</li>
+            <li>Queda histórico para reportes y aprendizaje.</li>
           </ul>
         </div>
       </div>
@@ -145,39 +181,58 @@
   </div>
 </section>
 
-<!-- MÓDULOS (descripción neutra) -->
+<!-- MÓDULOS -->
 <section class="py-5 bg-light">
   <div class="container">
     <h2 class="h4 fw-bold mb-3">Módulos</h2>
     <div class="row g-4">
       <div class="col-lg-4">
         <div class="card-elev p-4 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-grid"></i> Panel</h3>
-          <p class="text-muted mb-0">Visualización de solicitudes, estados y anotaciones internas.</p>
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-app-indicator"></i> App Persona</h3>
+          <p class="text-muted mb-0">Mapa interno y guía paso a paso; solicitud de ayuda con contacto y notas.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-geo-alt"></i> Ubicación en tiempo real</h3>
+          <p class="text-muted mb-0">Visualización del punto dentro de la sucursal para coordinar la asistencia.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-grid"></i> Panel Empresas</h3>
+          <p class="text-muted mb-0">Cola por sucursal con tipo de ayuda, contacto, ubicación y ETA; asignación y estados.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-elev p-4 h-100">
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-bell"></i> Alertas & Notificaciones</h3>
+          <p class="text-muted mb-0">Avisos en tiempo real ante nuevas solicitudes o cambios de estado.</p>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card-elev p-4 h-100">
           <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-bar-chart"></i> Reportes</h3>
-          <p class="text-muted mb-0">Información para revisar la operación y tomar decisiones.</p>
+          <p class="text-muted mb-0">Histórico y métricas operacionales para mejora continua.</p>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card-elev p-4 h-100">
-          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-gear"></i> Configuración</h3>
-          <p class="text-muted mb-0">Perfiles, tipos de ayuda, usuarios y permisos.</p>
+          <h3 class="h6 d-flex align-items-center gap-2"><i class="bi bi-universal-access"></i> Accesibilidad</h3>
+          <p class="text-muted mb-0">Interfaz clara y señales visuales/sonoras, pensando en distintas discapacidades.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA HONESTO -->
+<!-- CTA -->
 <section class="py-5">
   <div class="container">
     <div class="card-elev p-4 p-lg-5 text-center">
       <h3 class="h5 fw-bold">Conoce más sobre AidApp</h3>
-      <p class="text-muted mb-3">Explora la versión 1.0 (Beta) y revisa cómo presentamos la experiencia.</p>
+      <p class="text-muted mb-3">Explora la versión 1.0 (Beta) y revisa la experiencia completa.</p>
       <a href="https://aidapp-web.web.app/" target="_blank" rel="noopener" class="btn btn-brand">
         Visitar sitio oficial de AidApp
       </a>
@@ -188,8 +243,9 @@
 <footer class="py-4">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
     <div>© <span id="year"></span> Trinity Code Spa — Santiago, Chile</div>
-    <div class="text-muted">
-      <a href="assets/politica-privacidad.pdf" target="_blank" rel="noopener">Política de Privacidaddd</a>
+    <div class="text-muted d-flex gap-3">
+      <a href="assets/politica-privacidad.pdf" target="_blank" rel="noopener">Política de Privacidad</a>
+      <!-- <a href="assets/terminos-uso.pdf" target="_blank" rel="noopener">Términos de Uso</a> -->
     </div>
   </div>
 </footer>

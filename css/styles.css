@@ -1,15 +1,17 @@
 :root{
   /* Paleta Trinity Code (verde-petróleo) */
   --tc-bg:#1f2d30;          /* fondo general, casi negro */
-  --tc-card:#1b1c1cc4;      /* cartas/nav oscuro */
+  --tc-card:#4e7272c4;      /* cartas/nav oscuro */
   --tc-text:#e7f2ef;        /* texto principal */
   --tc-muted:#a6b9b6;       /* texto secundario */
   --tc-brand:#26827d;       /* verde petróleo principal */
-  --tc-brand2:#254743;      /* acento turquesa */
+  --tc-brand2:#509b91;      /* acento turquesa */
   --tc-border:#517477;      /* bordes sutiles */
   --tc-light:#cfe6e2;       /* color claro nuevo */
   --wave-color:#2b5457;     /* color de ondas */
   --wave-opacity:.16;       /* opacidad de ondas */
+  --tc-brand:#00f5d4;
+
 }
 
 html,body{
@@ -23,6 +25,42 @@ a{color:inherit; text-decoration:none}
   border-bottom:1px solid #46685f;
   backdrop-filter:saturate(160%) blur(6px);
 }
+
+/* === Colores del Navbar (control centralizado vía variables Bootstrap) === */
+.navbar[data-bs-theme="dark"]{
+  --bs-navbar-color: var(--tc-text);                /* enlaces normales */
+  --bs-navbar-hover-color: var(--tc-light);         /* hover/focus */
+  --bs-navbar-disabled-color: color-mix(in oklab, var(--tc-text) 45%, transparent);
+
+  --bs-navbar-active-color: var(--tc-brand);        /* enlace ACTIVO (p. ej. "Servicios") */
+  --bs-navbar-brand-color: var(--tc-light);
+  --bs-navbar-brand-hover-color: var(--tc-brand);
+
+  /* Dropdown dentro del navbar */
+  --bs-dropdown-color: var(--tc-text);
+  --bs-dropdown-bg: color-mix(in oklab, var(--tc-bg) 85%, black 15%);
+  --bs-dropdown-link-color: var(--tc-text);
+  --bs-dropdown-link-hover-color: var(--tc-light);
+  --bs-dropdown-link-hover-bg: color-mix(in oklab, var(--tc-brand) 14%, transparent);
+  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-link-active-bg: var(--tc-brand);
+  --bs-dropdown-border-color: var(--tc-border);
+}
+.navbar[data-bs-theme="dark"] .nav-link.active,
+.navbar[data-bs-theme="dark"] .nav-link.show{
+  color: var(--tc-brand) !important;                /* refuerzo por si algún estilo pisa la variable */
+}
+/* (Opcional) activo en hover a acento */
+.navbar[data-bs-theme="dark"] .nav-link.active:hover{
+  color: var(--tc-brand2) !important;
+}
+
+/* Mejoramos dropdown para tema oscuro */
+.navbar .dropdown-menu{
+  border:1px solid var(--tc-border);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
 .hero{
   background:
     radial-gradient(1200px 600px at 8% -10%, color-mix(in oklab, var(--tc-brand) 35%, transparent), transparent 60%),
